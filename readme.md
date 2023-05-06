@@ -127,17 +127,18 @@ Finally, we're one Quality-Of-Life update away from the actual base layer. <kbd>
 
 ```
 Nav Layer: Media, navigation
-                                                                                                                         
-,-------------------------------------------.                              ,-------------------------------------------.
-|        |      |      |      |      |      |                              | PgUp | Home |   ↑  | End  | VolUp| Delete |
-|--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|        |  GUI |  Alt | Ctrl | Shift|      |                              | PgDn |  ←   |   ↓  |   →  | VolDn| Insert |
-|--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-|        |      |      |      |      |      |      |ScLck |  |      |      | Pause|M Prev|M Play|M Next|VolMut| PrtSc  |
-`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       |      |      |      |      |      |  |      |      |      |      |      |
-                       |      |      |      |      |      |  |      |      |      |      |      |
-                       `----------------------------------'  `----------------------------------'
+
+ ,-------------------------------------------.                              ,-------------------------------------------.
+ |        | Pause|M Prev|M Play|M Next|VolMut|                              | PgUp | Home |  End |      |      | Delete |
+ |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ |        |  GUI |  Alt | Ctrl | Shift|      |                              | PgDn |  ←  |   ↓  |  ↑  |  →  | Insert |
+ |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ |        | CALC | BRI- | BRI+ |MouseL|MouseR|      |ScLck |  |      |      |      |M Prev|M Play|M Next|VolMut| PrtSc  |
+ `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+                        |      |      |      |      |      |  |      |      |      |      |      |
+                        |      |      |      |      |      |  |      |      |      |      |      |
+                        `----------------------------------'  `----------------------------------'
+
 ```
 
 This is where you'll find all the keys that are generally between the main block of a classic keyboard and the numpad in addition to media controls and modifiers on easy access on the home row for fast and comfortable chording with navigation keys.
@@ -202,7 +203,7 @@ Since there are more than 10 function keys, the cluster of F-keys does not follo
 Adjust Layer: Default layer settings, RGB
                                                                                                                          
 ,-------------------------------------------.                              ,-------------------------------------------.
-|        |      |      |QWERTY|      |      |                              |      |      |      |      |      |        |
+|        |      |      |QWERTY| HSNT |      |                              |      |      |      |      |      |        |
 |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
 |        |      |      |Dvorak|      |      |                              | TOG  | SAI  | HUI  | VAI  | MOD  |        |
 |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
@@ -223,6 +224,7 @@ enum layers {
     _DVORAK = 0,
     _QWERTY,
     _COLEMAK_DH,
+    _HSNT,
     _NAV,
     _SYM,
     _FUNCTION,

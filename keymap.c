@@ -137,20 +137,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Nav Layer: Media, navigation
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        | Pause|M Prev|M Play|M Next|VolMut|                              | PgUp | Home |  End |      |      | Delete |
+ * |MPlayer |M Prev|M Play|M Next|VolMut| BRI+ |                              |BrwsrS| PgUp | Home |  End | PgUP | Delete |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |  GUI |  Alt | Ctrl | Shift|      |                              | PgDn |  ←   |   ↓  |  ↑   |  →   | Insert |
+ * |  MyPC  |  GUI |  Alt | Ctrl | Shift| BRI- |                              |BrwsrF|  ←   |   ↓  |  ↑   |  →   | Insert |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        | CALC | BRI- | BRI+ |MouseL|MouseR|      |ScLck |  |      |      |      | M ←  | M ↓  | M ↑  | M →  | PrtSc  |
+ * |  CALC  |      |      |MouseW|MouseL|MouseR|Mouse4|Mouse5|  |      |      |BrwsrB|MouseL|MouseD|MouseU|MouseR|  PrtSc |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_NAV] = LAYOUT(
-      _______, KC_PAUSE,KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,                                     KC_PGUP, KC_HOME, KC_END,  _______, _______, KC_DEL,
-      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_INS,
-      _______, KC_CALC, KC_BRID, KC_BRIU, KC_BTN1, KC_BTN2, _______, KC_SCRL, _______, _______, KC_PSCR, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_PSCR,
+      KC_MSEL, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_BRIU,                                     KC_WSCH, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_DEL,
+      KC_MYCM, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_BRID,                                     KC_WFWD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_INS,
+      KC_CALC, _______, _______, KC_BTN3, KC_BTN2, KC_BTN1, KC_BTN4, KC_BTN5, _______, _______, KC_WBAK, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_PSCR,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -160,9 +160,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |    `   |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |  9   |  0   |   =    |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |    ~   |  !   |  @   |  #   |  $   |  %   |                              |   ^  |  &   |  *   |  (   |  )   |   +    |
+ * |    ~   |  !   |  @   |  ;   |  -   |  (   |                              |   )  |  +   |  :   |  ^   |  $   |   _    |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |    |   |   \  |  :   |  ;   |  -   |  [   |  {   |      |  |      |   }  |   ]  |  _   |  ,   |  .   |  /   |   ?    |
+ * |    |   |   \  |  #   |  %   |  [   |  {   |      |      |  |      |      |   }  |  ]   |  *   |  &   |  /   |   ?    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
@@ -170,8 +170,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_SYM] = LAYOUT(
       KC_GRV ,   KC_1 ,   KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                       KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_EQL ,
-     KC_TILD , KC_EXLM,  KC_AT , KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
-     KC_PIPE , KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______, _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM,  KC_DOT, KC_SLSH, KC_QUES,
+     KC_TILD , KC_EXLM,  KC_AT , KC_SCLN, KC_MINS, KC_LPRN,                                     KC_RPRN, KC_PLUS, KC_COLN, KC_CIRC,  KC_DLR, KC_UNDS,
+     KC_PIPE , KC_BSLS, KC_HASH, KC_PERC, KC_LBRC, KC_LCBR, _______, _______, _______, _______, KC_RCBR, KC_RBRC, KC_ASTR, KC_AMPR, KC_SLSH, KC_QUES,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -200,20 +200,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Adjust Layer: Default layer settings, RGB
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      |      |QWERTY| HSNT |      |                              |      |      |      |      |      |        |
+ * |        |BL_TOG|      |QWERTY| HSNT |      |                              | PLAIN|BREATH|RAINBW| SWIRL| SNAKE|KNGHTRID|
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |      |      |Dvorak|      |      |                              | TOG  | SAI  | HUI  | VAI  | MOD  |        |
+ * |        |BLBRTH| BL+  |Dvorak|      |      |                              | TOG  | SAI  | HUI  | VAI  | MOD  |  XMAS  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |Colmak|      |      |      |      |  |      |      |      | SAD  | HUD  | VAD  | RMOD |        |
+ * |        |BL_CYC| BL-  |Colmak|      |      |      |      |  |      |      | TEST | SAD  | HUD  | VAD  | RMOD |GRADIENT|
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_ADJUST] = LAYOUT(
-      _______, _______, _______, QWERTY ,    HSNT, _______,                                    _______, _______, _______, _______,  _______, _______,
-      _______, _______, _______, DVORAK , _______, _______,                                    RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI,  RGB_MOD, _______,
-      _______, _______, _______, COLEMAK, _______, _______,_______, _______, _______, _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, _______,
+      _______, BL_TOGG, _______, QWERTY ,    HSNT, _______,                                    RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW,RGB_M_SN, RGB_M_K,
+      _______, BL_BRTG,   BL_UP, DVORAK , _______, _______,                                    RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI,  RGB_MOD, RGB_M_X,
+      _______, BL_STEP, BL_DOWN, COLEMAK, _______, _______,_______, _______, _______, _______, RGB_M_T, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, RGB_M_G,
                                  _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
     ),
 

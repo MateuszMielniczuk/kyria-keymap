@@ -25,7 +25,6 @@ The five different layers are the following:
 
 ![Step-by-step animation of the transformation of an ortholinear TKL to a Kyria](https://i.imgur.com/uVDCOek.gif)
 
-<details>
 After making transformations to the classic ANSI US QWERTY TKL 60% to arrive to the layout of the Kyria, as illustrated in the animation above, the result looks like this:
 
 ## Base layer(s)
@@ -60,6 +59,9 @@ Base Layer: Dvorak
 `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
                        |Adjust| LGUI | LAlt | Space| Nav  |  | Sym  | Enter| AltGr| RGUI | Menu |
                        `----------------------------------'  `----------------------------------'
+```
+
+```
 Base Layer: QWERTY
 
 ,-------------------------------------------.                              ,-------------------------------------------.
@@ -72,8 +74,6 @@ Base Layer: QWERTY
                        |Adjust| LGUI | LAlt | Space| Nav  |  | Sym  | Enter| AltGr| RGUI | Menu |
                        `----------------------------------'  `----------------------------------'
 ```
-
-</details>
 
 ## Navigation layer
 
@@ -98,11 +98,11 @@ This is where you'll find all the keys that are generally between the main block
 Sym Layer: Numbers, symbols
 
  ,-------------------------------------------.                              ,-------------------------------------------.
- |    `   |  !   |  @   |  #   |  $   |  %   |                              |   ^  |  &   |  *   |  (   |  )   |   =    |
+ |    `   |  !   |  @   |  #   |  $   |  %   |                              |   ^  |  &   |  *   |  (   |  )   |        |
  |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  |    ~   |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |  9   |  0   |   _    |
  |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- |        |  ?   |   |  |   \  |  [   |  {   |   (  |      |  |      |  )   |   }  |  ]   |   /  |      |      |   +    |
+ |        |  ?   |   |  |   \  |  [   |  {   |   (  |      |  |      |  )   |   }  |  ]   |   /  |   =  |  -   |   +    |
  `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
                         |      |      |      |      |      |  | [Sym]|      |      |      |      |
                         `----------------------------------'  `----------------------------------'

@@ -1,0 +1,310 @@
+# parsed and tweaked from the default QMK keymap
+layout:
+  qmk_keyboard: splitkb/kyria/rev1
+  layout_name: LAYOUT_split_3x6_5
+layers:
+  DVORAK_VIM:
+  - TAB
+  - {t: '''', s: '"'}
+  - {t: ',', s: '<'}
+  - {t: '.', s: '>'}
+  - P
+  - Y
+  - F
+  - G
+  - C
+  - R
+  - S
+  - '$$mdi:backspace$$'
+  - {t: ESC, h: LCTL}
+  - A
+  - O
+  - {t: E, h: $$mdi:apple-keyboard-shift$$, type: held}
+  - U
+  - I
+  - D
+  - H
+  - {t: T, h: $$mdi:apple-keyboard-shift$$, type: held}
+  - N
+  - L
+  - {t: '-', s: '_', h: RCTL}
+  - $$mdi:apple-keyboard-shift$$
+  - {t: ';', s: ':'}
+  - Q
+  - J
+  - K
+  - X
+  - {t: '[', s: '{'}
+  - CAPS
+  - 'FUNC'
+  - {t: ']', s: '}'}
+  - B
+  - M
+  - W
+  - V
+  - Z
+  - $$mdi:apple-keyboard-shift$$
+  - ADJUST
+  - $$mdi:rhombus-split$$
+  - LALT
+  - ENT
+  - NAV
+  - SYM
+  - '$$mdi:keyboard-space$$'
+  - RALT
+  - $$mdi:rhombus-split$$
+  - APP
+  SYM:
+  - '~'
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - {t: '', type: trans}
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '_'
+  - $$mdi:apple-keyboard-shift$$
+  - '?'
+  - '|'
+  - '\'
+  - '['
+  - '{'
+  - '('
+  - ''
+  - ''
+  - ')'
+  - '}'
+  - ']'
+  - '/'
+  - '='
+  - '-'
+  - '+'
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {type: held}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  NAV:
+  - $$mdi:music-note$$
+  - $$mdi:skip-previous$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-next$$
+  - $$mdi:volume-mute$$
+  - $$mdi:octagram-plus-outline$$
+  - 'BROWS'
+  - 'HOME'
+  - 'PG DWN'
+  - 'PG UP'
+  - 'END'
+  - 'DEL'
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - $$mdi:content-cut$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
+  - $$mdi:octagram-minus$$
+  - 'BROWS FRWRD'
+  - $$mdi:arrow-left$$
+  - $$mdi:arrow-down$$
+  - $$mdi:arrow-up$$
+  - $$mdi:arrow-right$$
+  - 'INS'
+  - {t: '', type: trans}
+  - $$mdi:calculator$$
+  - {t: '', type: trans}
+  - 'MOUSE MID'
+  - 'MOUSE LEFT'
+  - 'MOUSE RIGHT'
+  - 'MOUSE 4'
+  - 'MOUSE 5'
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - 'BROWS BCK'
+  - {t: $$mdi:arrow-left-thick$$, h: 'MOUSE'}
+  - {t: $$mdi:arrow-down-thick$$, h: 'MOUSE'}
+  - {t: $$mdi:arrow-up-thick$$, h: 'MOUSE'}
+  - {t: $$mdi:arrow-right-thick$$, h: 'MOUSE'}
+  - 'PRINT SCR'
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {type: held}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  FUNC:
+  - {t: '', type: trans}
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - F5
+  - F6
+  - F7
+  - F8
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - $$mdi:apple-keyboard-shift$$
+  - RCTL
+  - LALT
+  - $$mdi:rhombus-split$$
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {type: held}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  ADJUST:
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - QWERTY
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - DVORAK
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - 'RGB TOG'
+  - 'RGB SAT+'
+  - 'RGB HUE+'
+  - 'RGB BRI+'
+  - 'RGB MOD+'
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - COLEMAK DH
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - 'RGB SAT-'
+  - 'RGB HUE-'
+  - 'RGB BRI-'
+  - 'RGB MOD-'
+  - {t: '', type: trans}
+  - {type: held}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+  - {t: '', type: trans}
+combos:
+- p: [2, 4]
+  k: '{'
+  l: [DVORAK_VIM]
+  a: top
+  o: 0.4
+- p: [3, 5]
+  k: '-'
+  l: [DVORAK_VIM]
+  a: top
+- p: [7, 9]
+  k: '}'
+  l: [DVORAK_VIM]
+  a: top
+  o: 0.4
+- p: [6, 8]
+  k: '+'
+  l: [DVORAK_VIM]
+  a: top
+- p: [14, 16]
+  k: '('
+  l: [DVORAK_VIM]
+  a: top
+  o: 0.2
+- p: [27, 29]
+  k: '|'
+  l: [DVORAK_VIM]
+  a: bottom
+- p: [19, 21]
+  k: ')'
+  l: [DVORAK_VIM]
+  a: top
+  o: 0.2
+- p: [34, 36]
+  k: '='
+  l: [DVORAK_VIM]
+  a: bottom
+- p: [26, 28]
+  k: '['
+  l: [DVORAK_VIM]
+  a: bottom
+- p: [35, 37]
+  k: ']'
+  l: [DVORAK_VIM]
+  a: bottom
+- p: [34, 38]
+  k: $$mdi:close-box$$
+  l: [DVORAK_VIM]
+  a: bottom
+  o: 0.3

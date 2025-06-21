@@ -2,13 +2,44 @@
 
 ## Resources
 
-- [How to flash firmware with qmk](https://docs.splitkb.com/hc/en-us/articles/6330981035676-Aurora-Build-Guide-20-Flashing-Firmware)
+- [Flash firmware with QMK and docker](https://docs.qmk.fm/getting_started_docker#docker-quick-start)
+- [Flash firmware with QMK](https://docs.splitkb.com/hc/en-us/articles/6330981035676-Aurora-Build-Guide-20-Flashing-Firmware)
 - [Online keymap builder](https://config.qmk.fm/#/frooastboard/walnut/LAYOUT_all)
+- [Online keymap draver](https://keymap-drawer.streamlit.app/?example_yaml=kyria.yaml)
+- [QMK setup on SUSE](https://aethernaut.eu/log/2024-08-21-qmk-setup.html)
 
 ## How to
 
-- Compile this software: `qmk compile -kb splitkb/kyria/ -km my_keymap_name`
-- Flash compiled software: `qmk flash -bl dfu path/to_my/firmware_file.hex`
+- clone qmk_firmware from github
+- copy udev file to have the keyboard recognized by the system:
+
+```bash
+sudo cp utils/udev/50-qmk.rules /etc/udev/rules.d/
+```
+
+- copy this keymap setup to qmk_firmware (symlink not working):
+
+```bash
+cp -rf ~/projects/kyria-keymap/ ~/qmk_firmware/keyboards/splitkb/kyria/keymaps/
+```
+
+- Compile and flash this software with docker (recommended):
+
+```bash
+util/docker_build.sh splitkb/kyria/rev3:kyria-keymap:flash
+```
+
+- Compile this software (qmk must be installed):
+
+```bash
+qmk compile -kb splitkb/kyria/rev3 -km kyria-keymap`
+```
+
+- Flash compiled software (qmk dependencies must be installed):
+
+```bash
+qmk flash -bl dfu path/to_my/firmware_file.hex
+```
 
 ## Description
 
@@ -29,118 +60,9 @@ After making transformations to the classic ANSI US QWERTY TKL 60% to arrive to 
 
 ## Base layer(s)
 
-```
-Base Layer: -
+![keymap](keymap_drawer/kyria_map.svg)
 
-,-------------------------------------------.                              ,-------------------------------------------.
-|  Tab   |   -  |   -  |   -  |   -  |   -  |                              |   -  |   -  |   -  |   -  |   -  |  Bksp  |
-|--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|Ctrl/Esc|   -  |   -  |   -  |   -  |   -  |                              |   -  |   -  |   -  |   -  |   -  |Ctrl/ - |
-|--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-| LShift |   -  |   -  |   -  |   -  |   -  | [ {  |CapsLk|  |F-Keys|  ] } |   -  |   -  |   -  |   -  |   -  | RShift |
-`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       |Adjust| LGUI | LAlt | Space| Nav  |  | Sym  | Enter| AltGr| RGUI | Menu |
-                       `----------------------------------'  `----------------------------------'
-```
-
-Three different well-known keyboard layouts are provided to fill in the placeholder `-` keys: QWERTY, Colemak-DH, and Dvorak. The default layer can be changed at runtime, more info on that in the section on the [adjust layer](#adjust-layer).
-
-For the rest of this write-up, the base layer will be assumed to be Dvorak and will be used as a reference to describe physical keys, e.g. “<kbd>B</kbd> key” vs, the much more verbose, “lower inner index key”.
-
-```
-Base Layer: Dvorak
-
-,-------------------------------------------.                              ,-------------------------------------------.
-|  Tab   | ' "  | , <  | . >  |   P  |   Y  |                              |   F  |   G  |   C  |   R  |   L  |  Bksp  |
-|--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|Ctrl/Esc|   A  |   O  |   E  |   U  |   I  |                              |   D  |   H  |   T  |   N  |   S  |Ctrl/- _|
-|--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-| LShift |  ; : |   Q  |   J  |   K  |   X  | [ {  |CapsLk|  |F-keys|  ] } |   B  |   M  |  W   |   V  |   Z  | RShift |
-`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       |Adjust| LGUI | LAlt | Space| Nav  |  | Sym  | Enter| AltGr| RGUI | Menu |
-                       `----------------------------------'  `----------------------------------'
-```
-
-```
-Base Layer: QWERTY
-
-,-------------------------------------------.                              ,-------------------------------------------.
-|  Tab   |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  Bksp  |
-|--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |Ctrl/' "|
-|--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-| LShift |   Z  |   X  |   C  |   V  |   B  | [ {  |CapsLk|  |F-keys|  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
-`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       |Adjust| LGUI | LAlt | Space| Nav  |  | Sym  | Enter| AltGr| RGUI | Menu |
-                       `----------------------------------'  `----------------------------------'
-```
-
-## Navigation layer
-
-```
-Nav Layer: Media, navigation
- ,-------------------------------------------.                              ,-------------------------------------------.
- |        |M Prev|M Play|M Next|VolMut| BRI+ |                              |BrwsrS| PgUp | Home |  End | PgUP | Delete |
- |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- |        |  GUI |  Alt | Ctrl | Shift| BRI- |                              |BrwsrF|  ←   |   ↓  |  ↑   |  →   | Insert |
- |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- |        | Calc |      |MouseW|MouseL|MouseR|Mouse4|Mouse5|  |      |      |BrwsrB|MouseL|MouseD|MouseU|MouseR|  PrtSc |
- `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                        |      |      |      |      | [Nav]|  |      |      |      |      |      |
-                        `----------------------------------'  `----------------------------------'
-```
-
-This is where you'll find all the keys that are generally between the main block of a classic keyboard and the numpad in addition to media controls and modifiers on easy access on the home row for fast and comfortable chording with navigation keys.
-
-## Symbols layer
-
-```
-Sym Layer: Numbers, symbols
-
- ,-------------------------------------------.                              ,-------------------------------------------.
- |    `   |  !   |  @   |  #   |  $   |  %   |                              |   ^  |  &   |  *   |  (   |  )   |        |
- |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- |    ~   |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |  9   |  0   |   _    |
- |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- |        |  ?   |   |  |   \  |  [   |  {   |   (  |      |  |      |  )   |   }  |  ]   |   /  |   =  |  -   |   +    |
- `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                        |      |      |      |      |      |  | [Sym]|      |      |      |      |
-                        `----------------------------------'  `----------------------------------'
-```
-
-## Function layer
-
-```
-Function Layer: Function keys
-
-,-------------------------------------------.                              ,-------------------------------------------.
-|        |  F9  | F10  | F11  | F12  |      |                              |      |      |      |      |      |        |
-|--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|        |  F5  |  F6  |  F7  |  F8  |      |                              |      | Shift| Ctrl |  Alt |  GUI |        |
-|--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-|        |  F1  |  F2  |  F3  |  F4  |      |      |      |  |[Fkey]|      |      |      |      |      |      |        |
-`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       |      |      |      |      |      |  |      |      |      |      |      |
-                       `----------------------------------'  `----------------------------------'
-```
-
-## Adjust layer
-
-```
-Adjust Layer: Default layer settings, RGB
-
- ,-------------------------------------------.                              ,-------------------------------------------.
- |        |BL_TOG|      |QWERTY| HSNT |      |                              | PLAIN|BREATH|RAINBW| SWIRL| SNAKE|KNGHTRID|
- |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- |        |BLBRTH| BL+  |Dvorak|      |      |                              | TOG  | SAI  | HUI  | VAI  | MOD  |  XMAS  |
- |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- |        |BL_CYC| BL-  |Colmak|      |      |      |      |  |      |      | TEST | SAD  | HUD  | VAD  | RMOD |GRADIENT|
- `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                        | [Adj]|      |      |      |      |  |      |      |      |      |      |
-                        `----------------------------------'  `----------------------------------'
-```
-
-Default layer settings on the left and various RGB underglow controls on the right.
+Keyboard is using combo keys, by two keys at the same time.
 
 NOTE: The default layer settings set by those keys are _NOT_ stored in EEPROM and thus do not persist through boots. If you wish to change the default layer in a non-volatile manner, either change the order of the layers in the firmware, for example like so if you want to set Dvorak as the new default:
 
@@ -160,10 +82,6 @@ enum layers {
 or re-define the `QWERTY`, `COLEMAK` and `DVORAK` keys to point to custom keycodes starting on `SAFE_RANGE` and calling the `set_single_persistent_default_layer` function inside of `process_record_user`.
 
 ## Hardware Features
-
-### Rotary Encoder
-
-The left rotary encoder is programmed to control the volume whereas the right encoder sends <kbd>PgUp</kbd> or <kbd>PgDn</kbd> on every turn.
 
 ### OLEDs
 
